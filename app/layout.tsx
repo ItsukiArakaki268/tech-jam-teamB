@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -23,11 +24,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+    <header className="sticky top-0 z-10 bg-white/70 backdrop-blur border-b">
+          <nav className="max-w-6xl mx-auto flex items-center gap-4 px-4 py-3 text-sm">
+      <Link className="font-semibold mr-auto" href="/">TechJam B</Link>
+      <Link className="hover:underline" href="/new/restaurants">お店を探す</Link>
+      <Link className="hover:underline" href="/new/schedule">日程調整</Link>
+      <Link className="hover:underline" href="/review/123">レビュー</Link>
+          </nav>
+        </header>
+        <main className="max-w-6xl mx-auto px-4 py-6">
+          {children}
+        </main>
       </body>
     </html>
   );
