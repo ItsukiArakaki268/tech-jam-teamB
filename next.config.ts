@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   output: "standalone",
 
   // 既存の設定...
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

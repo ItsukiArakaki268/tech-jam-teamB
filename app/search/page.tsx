@@ -6,7 +6,6 @@ import { SearchFilters } from "@/components/search/SearchFilters";
 import { SearchResults } from "@/components/search/SearchResults";
 import type { HotPepperShop, SearchParams } from "@/lib/types";
 import { mockReviews, mockShops } from "@/lib/mockData";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function applyFilters(shops: HotPepperShop[], params: SearchParams) {
   return shops.filter((s) => {
@@ -32,7 +31,7 @@ function applyFilters(shops: HotPepperShop[], params: SearchParams) {
   });
 }
 
-export default function RestaurantsSearchPage() {
+export default function SearchPage() {
   const [params, setParams] = useState<SearchParams>({});
   const filtered = useMemo(() => applyFilters(mockShops, params), [params]);
 
@@ -57,44 +56,33 @@ export default function RestaurantsSearchPage() {
         </TabsContent>
 
         <TabsContent value="internal" className="mt-4">
+          {/* 社内レビューは今は要件上、タイトル/社員名/タグ/内容を一覧化。後続で詳細へリンク */}
           {mockReviews.length === 0 ? (
             <p className="text-muted-foreground">レビューがありません。</p>
           ) : (
             <ul className="space-y-4">
-              {mockReviews.map((r) => {
-                const initials = r.employeeName
-                  .split(" ")
-                  .map((s) => s[0])
-                  .join("");
-                return (
-                  <li key={r.id} className="border rounded-xl p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="font-medium">{r.title}</div>
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <Avatar className="size-6">
-                          <AvatarImage src={r.avatarUrl} alt={r.employeeName} />
-                          <AvatarFallback>{initials}</AvatarFallback>
-                        </Avatar>
-                        <span>
-                          {r.employeeName}
-                          {r.isGourmetMeister ? " ・グルメマイスター" : ""}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="text-sm mb-2">{r.content}</div>
-                    <div className="flex gap-2 flex-wrap">
-                      {r.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs bg-secondary text-secondary-foreground rounded px-2 py-0.5"
-                        >
-                          #{t}
-                        </span>
-                      ))}
-                    </div>
-                  </li>
-                );
-              })}
+              {mockReviews.map((r) => (
+                <li key={r.id} className="border rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="font-medium">{r.title}</div>
+                    <span className="text-xs text-muted-foreground">
+                      {r.employeeName}{" "}
+                      {r.isGourmetMeister ? "・グルメマイスター" : ""}
+                    </span>
+                  </div>
+                  <div className="text-sm mb-2">{r.content}</div>
+                  <div className="flex gap-2 flex-wrap">
+                    {r.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs bg-secondary text-secondary-foreground rounded px-2 py-0.5"
+                      >
+                        #{t}
+                      </span>
+                    ))}
+                  </div>
+                </li>
+              ))}
             </ul>
           )}
         </TabsContent>
