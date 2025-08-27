@@ -17,7 +17,8 @@ export const mockShops: HotPepperShop[] = [
     capacity: 20,
     catchCopy: "備長炭で焼き上げる絶品焼き鳥",
     photoUrl: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=800",
-    totalReviews: 12,
+  totalReviews: 12,
+  wentCount: 12,
   },
   {
     id: "shop_2",
@@ -29,7 +30,8 @@ export const mockShops: HotPepperShop[] = [
     capacity: 8,
     catchCopy: "ワインと手打ちパスタが人気",
     photoUrl: "https://images.unsplash.com/photo-1543352634-8730cde56b47?w=800",
-    totalReviews: 8,
+  totalReviews: 8,
+  wentCount: 5,
   },
   {
     id: "shop_3",
@@ -41,7 +43,8 @@ export const mockShops: HotPepperShop[] = [
     capacity: 30,
     catchCopy: "会食に最適な個室多数",
     photoUrl: "https://images.unsplash.com/photo-1553621042-2fa1a1c1c2f6?w=800",
-    totalReviews: 25,
+  totalReviews: 25,
+  wentCount: 8,
   },
 ];
 

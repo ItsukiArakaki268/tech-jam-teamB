@@ -38,6 +38,7 @@ export interface HotPepperShop {
   catchCopy?: string;
   photoUrl?: string;
   totalReviews: number;
+  wentCount?: number;
 }
 
 export interface InternalReview {
