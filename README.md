@@ -10,6 +10,24 @@
 - **データベース:** [PostgreSQL](https://www.postgresql.org/)
 - **コンテナ:** [Docker](https://www.docker.com/)
 
+## ディレクトリ構造
+```
+  ├── app/                   # Next.js App Router
+  │   ├── api/               # API ルート
+  │   │   ├── restaurants/   # レストラン関連API
+  │   │   ├── reviews/       # レビュー関連API
+  │   │   └── schedules/     # 日程調整関連API
+  │   ├── restaurants/       # レストラン画面
+  │   ├── review/            # レビュー画面
+  │   └── schedule/          # 日程調整画面
+  ├── components/            # UIコンポーネント
+  │   └── ui/                # shadcn/ui コンポーネント
+  ├── lib/                   # ユーティリティ
+  │   ├── db.ts              # データベース接続
+  │   └── utils.ts           # ヘルパー関数
+  └── scripts/               # セットアップスクリプト
+```
+
 ## 🚀 セットアップと実行
 
 開発環境はDockerコンテナ内で実行することを推奨します。
