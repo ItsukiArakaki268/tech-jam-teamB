@@ -13,39 +13,39 @@
 ## ディレクトリ構造
 
 ```
-tech-jam-teamB/
-├── app/                                    # Next.js App Router
-│   ├── api/                                # API ルート（バックエンド）
-│   │   ├── restaurants/
-│   │   │   ├── search/route.ts             # 飲食店検索API
-│   │   │   └── [id]/route.ts               # 飲食店詳細取得API
-│   │   ├── reviews/
-│   │   │   ├── route.ts                    # レビュー投稿API
-│   │   │   └── [restaurantId]/route.ts     # レビュー一覧取得API(1店舗)
-│   │   └── schedules/
-│   │       └── adjust/route.ts             # 日程調整・飲食店提案API
-│   ├── restaurants/
-│   │   ├── page.tsx                        # 飲食店検索画面
-│   │   ├── [id]/page.tsx                   # 飲食店詳細画面
-│   │   └── review/page.tsx                 # レビュー投稿画面(メインページ)
-│   ├── review/
-│   │   └── [restaurantId]/page.tsx         # レビュー投稿画面(詳細ページ)
-│   ├── schedule/
-│   │   └── page.tsx                        # 日程調整画面
-│   ├── page.tsx                            # ルートページ
-│   ├── globals.css
-│   └── layout.tsx
-├── components/
-│   └── ui/                                 # shadcn/ui コンポーネント
-├── lib/
-│   ├── db.ts                               # データベース接続（Neon PostgreSQL）
-│   ├── hotpepper/                          # Hotpepper API関連
-│   │   ├── client.ts
-│   │   ├── types.ts
-│   │   └── constants.ts
-│   └── utils.ts
-└── scripts/
-    └── setup-db.sql                        # DB初期化スクリプト
+  tech-jam-teamB/
+  ├── app/                                    # Next.js App Router
+  │   ├── api/                                # API ルート（バックエンド）
+  │   │   ├── restaurants/
+  │   │   │   ├── search/route.ts             # 飲食店検索API
+  │   │   │   └── [id]/route.ts               # 飲食店詳細取得API
+  │   │   ├── reviews/
+  │   │   │   ├── route.ts                    # レビュー投稿API
+  │   │   │   └── [restaurantId]/route.ts     # レビュー一覧取得API(1店舗)
+  │   │   └── schedules/
+  │   │       └── adjust/route.ts             # 日程調整・飲食店提案API
+  │   ├── restaurants/
+  │   │   ├── page.tsx                        # 飲食店検索画面
+  │   │   ├── [id]/page.tsx                   # 飲食店詳細画面
+  │   │   └── review/page.tsx                 # レビュー投稿画面(メインページ)
+  │   ├── review/
+  │   │   └── [restaurantId]/page.tsx         # レビュー投稿画面(詳細ページ)
+  │   ├── schedule/
+  │   │   └── page.tsx                        # 日程調整画面
+  │   ├── page.tsx                            # ルートページ
+  │   ├── globals.css
+  │   └── layout.tsx
+  ├── components/
+  │   └── ui/                                 # shadcn/ui コンポーネント
+  ├── lib/
+  │   ├── db.ts                               # データベース接続（Neon PostgreSQL）
+  │   ├── hotpepper/                          # Hotpepper API関連
+  │   │   ├── client.ts
+  │   │   ├── types.ts
+  │   │   └── constants.ts
+  │   └── utils.ts
+  └── scripts/
+      └── setup-db.sql                        # DB初期化スクリプト
 ```
 
 ## セットアップと実行
